@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | Natasha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div class="logo">Natasha Narine</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="case_studies.html">Case Studies</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="personal_work.html">Personal Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="explore-section">
+    <a href="index.html" class="back-btn">← Back</a>
+
+  
+
+    <div class="explore-grid">
+
+        <a href="about.html" class="explore-card pop">About</a>
+        <a href="case_studies.html" class="explore-card pop">Case Studies</a>
+        <a href="projects.html" class="explore-card pop">Projects</a>
+        <a href="design.html" class="explore-card pop">Design</a>
+        <a href="personal_work.html" class="explore-card pop">Personal Work</a>
+        <a href="contact.html" class="explore-card pop">Contact</a>
+
+    </div>
+</section>
+
+<script>
+    // cute pop-in stagger animation
+    const cards = document.querySelectorAll('.explore-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('visible');
+        }, 150 * index); // stagger timing
+    });
+</script>
+
+</body>
+</html>
