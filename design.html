@@ -7,34 +7,61 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="design-page">
 
-<nav>
-    <div class="logo">Natasha Narine</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="case_studies.html">Case Studies</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="design.html" class="active">Design</a></li>
-        <li><a href="personal_work.html">Personal Work</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <div class="logo">Natasha Narine</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="case_studies.html">Case Studies</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="personal_work.html">Personal Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<section class="cute-section">
-      <!-- Back button -->
-      <a href="explore.html" class="back-btn">← Back</a>
-
-    <h2>Design Gallery</h2>
-    <p>UI kits, illustrations, visual concepts, and product design explorations.</p>
-
-    <div class="project-grid">
-        <div class="project-card">UI Kit</div>
-        <div class="project-card">Mobile Layouts</div>
-        <div class="project-card">Brand Work</div>
-    </div>
-</section>
+    <section class="cute-section">
+        <a href="explore.html" class="back-btn">← Back to explore</a>
+    
+        <h2>Design Gallery</h2>
+        <p class="section-subtitle">UI kits, illustrations, visual concepts, product design explorations, and merch design.</p>
+    
+        <div class="project-grid">
+    
+            <!-- We Create Tech Merch -->
+            <div class="project-card" onclick="openModal('modal-wct')">
+                <img src="images/WCT Shirt Design -  Brown Lettering  Brown Outline  Transparent (2).png" alt="We Create Tech Merch">
+                <h3>We Create Tech Merch</h3>
+                <p>Merchandise designs for We Create Tech, including t-shirts, stickers, and digital assets, reflecting the community-driven tech culture.</p>
+            </div>
+    
+            <!-- UI Kit -->
+            <div class="project-card" onclick="openModal('modal-ui')">
+                <img src="images/ui-kit.jpg" alt="UI Kit">
+                <h3>UI Kit</h3>
+                <p>A clean and modular user interface kit designed for web and mobile applications, emphasizing usability and visual consistency.</p>
+            </div>
+    
+            <!-- Mobile Layouts -->
+            <div class="project-card" onclick="openModal('modal-mobile')">
+                <img src="images/mobile-layouts.jpg" alt="Mobile Layouts">
+                <h3>Mobile Layouts</h3>
+                <p>Responsive mobile screens designed for intuitive navigation and user-friendly experiences across multiple devices.</p>
+            </div>
+    
+            <!-- Brand Work -->
+            <div class="project-card" onclick="openModal('modal-brand')">
+                <img src="images/brand-work.jpg" alt="Brand Work">
+                <h3>Brand Work</h3>
+                <p>Logo concepts, color palettes, and branding visuals created to strengthen brand identity and recognition.</p>
+            </div>
+    
+        </div>
+    
 
 </body>
 </html>
+
+
