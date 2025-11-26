@@ -59,30 +59,50 @@ nav ul li a:hover {
 .hero-title {
     font-size: 3rem;
     margin-bottom: 10px;
-    text-shadow: 0 0 10px #ff69b4;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
+/* Button styling */
 .btn {
-    padding: 12px 25px;
-    color: white;
-    background-color: #ff69b4;
+    padding: 15px 35px;
+    font-weight: 700;
+    color: #fff;
+    background-size: 800% 800%;
     border: none;
-    cursor: pointer;
     border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-decoration: none; 
 }
 
 .btn:hover {
-    background-color: #ff85c1;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    animation: gradientBG 3s ease infinite;
 }
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Confetti canvas fills screen and sits on top */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
 
 /* Cute Sections */
 .cute-section {
@@ -95,37 +115,135 @@ nav ul li a:hover {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-top: 50px;
+    margin-bottom: 10px;
     text-align: center;
     color: #ff69b4;
 }
 
-/* Projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+h3 {
+    margin-top: 40px; 
+    margin-bottom: 15px; 
+    color: #ff69b4; 
+    font-size: 1.5rem; 
+    font-weight: 600;
 }
 
+h4 {
+    margin-top: 0px;  /* adjust the value to your preference */
+    margin-bottom: 15px; /* optional: add some spacing below */
+    color: black; /* optional: match your pink branding */
+    font-size: 1.5rem; /* optional: make it slightly smaller than h2 */
+    font-weight: 600;
+}
+
+/* Case Studies: Vertical Stacked Cards */
+
+/* Project grid: remove multi-column layout */
+.project-grid {
+    display: flex;
+    flex-direction: column;  
+    gap: 2rem;               
+    margin-top: 2rem;
+}
+
+/* Project Card */
 .project-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     background-color: #ffe6f0;
-    padding: 20px;
     border-radius: 20px;
-    text-align: center;
-    transition: all 0.3s;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    align-items: center;
 }
 
 .project-card:hover {
-    background-color: #ffd6e8;
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
+
+/* Image inside card */
+.project-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+    transform: scale(1.03);
+}
+
+/* Card text content */
+.card-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 105, 180, 0.85); /* semi-transparent pink */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Invisible link covering full card */
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-card img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+
 
 /* Contact Form */
 form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -188,7 +306,6 @@ footer {
     gap: 30px;
     margin-top: 40px;
 }
-
 .explore-card {
     background-color: #ffe6f0;
     padding: 40px 20px;
@@ -197,22 +314,18 @@ footer {
     font-weight: 700;
     color: #333;
     text-decoration: none;
-    opacity: 0;
-    transform: scale(0.6);
-    transition: 0.4s ease;
+    opacity: 1;                  /* always visible */
+    transform: scale();         /* normal size */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.explore-card.visible {
-    opacity: 1;
-    transform: scale(1);
 }
 
 .explore-card:hover {
     background-color: #ffd6e8;
-    transform: scale(1.05);
+    transform: scale(1.05);      /* small scale on hover */
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+
 
 .back-btn {
     display: inline-block;
@@ -244,5 +357,468 @@ footer {
     .explore-grid {
         grid-template-columns: 1fr;
     }
+}
+
+#logo {
+    
+}
+
+/* Case Study Cards */
+.case-study-card {
+    background-color: #ffe6f0;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.case-study-card:hover {
+    transform: translateY(-8px);
+    background-color: #ffd6e8;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* Thumbnail images */
+.cs-image {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* Title */
+.case-study-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Description */
+.case-study-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+}
+
+
+
+/* Tags */
+.cs-tags {
+    display: inline-block;
+    background-color: #ffb6d3;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.cs-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.cs-btn:hover {
+    background-color: #ff85c1;
+    transform: scale(1.05);
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px auto 0 auto; /* top margin + center horizontally */
+    max-width: 1000px; /* control overall width */
+    width: 90%; /* take most of the container but leave space on sides */
+}
+
+
+/* Individual gallery items */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover zoom effect */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay for captions */
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 105, 180, 0.85); /* semi-transparent pink */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Optional: subtle shadow on hover */
+.gallery-item:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+
+/* About Section: Headshot + Text */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* space between headshot and text */
+    margin-top: 20px;
+    flex-wrap: wrap; /* stack on smaller screens */
+}
+
+.headshot img {
+    width: 260px;          /* adjust to whatever rectangle size you want */
+    height: 245px;          /* keeps proportions natural */
+    border-radius: 20px;      /* makes sure it stays a rectangle */
+    object-fit: cover;     /* avoids distortion if inside a fixed container */
+}
+
+.about-text {
+    flex: 1; /* text takes remaining space */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .headshot img {
+        margin-bottom: 15px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+.skill-chip {
+    background-color: #ffe6f0;
+    color: #ff69b4;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid #ffb3d1;
+    transition: all 0.3s ease;
+    cursor: default;
+    font-size: 0.95rem;
+}
+
+.skill-chip:hover {
+    background-color: #ff69b4;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Center skills on mobile */
+@media (max-width: 768px) {
+    .skills {
+        justify-content: center;
+    }
+}
+
+
+/* Job Card */
+
+
+
+.job-card {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    align-items: center;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Image inside card */
+.job-card img {
+    width: 125px;
+    border-radius: 15px;
+    margin-right: 20px;
+
+
+}
+
+.job-card img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .job-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .job-card img {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+/* Gallery */
+.gallery-item .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+
+
+/* Skills Section */
+.skill-chip {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+.skill-chip:hover {
+    background-color: #000000;
+    color: white;
+}
+
+/* Explore Cards */
+.explore-card {
+    background-color: #ffffff;
+}
+
+.explore-card:hover {
+    background-color: #f0f0f0;
+}
+
+/* Back Button */
+.back-btn {
+    background-color: #000000;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #333333;
+}
+
+/* Contact page buttons */
+.contact-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-icons img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px; /* optional: round corners */
+    transition: transform 0.2s ease;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Color Updates */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+/* Navbar */
+nav {
+    background-color: #ffffff; /* white */
+    color: #000000; /* black text */
+}
+
+nav ul li a:hover {
+    color: #555555; /* dark gray for hover */
+}
+
+/* Hero Section */
+.hero {
+    
+    background: linear-gradient(to right, #ffffff, #e0e0e0); /* white to light gray */
+    color: #000000;
+}
+
+.hero-title {
+    font-size: 60px;
+
+}
+
+
+.btn {
+    background-color: #000000; /* black button */
+    color: white;
+}
+
+.btn:hover {
+    background-color: #333333; /* dark gray hover */
+}
+
+/* Cute Sections */
+.cute-section {
+    background-color: #f9f9f9; /* very light gray */
+}
+
+h2 {
+    color: #000000;
+}
+
+/* H3 headers */
+h3 {
+    color: #000000;
+}
+
+/* Project Cards */
+.project-card {
+    background-color: #ffffff;
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-overlay {
+    background: rgba(0, 0, 0, 0.7); /* black semi-transparent overlay */
+    color: white;
+}
+
+/* Contact Form */
+form input, form textarea {
+    border: 1px solid #cccccc;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+form button {
+    background-color: #000000;
+    color: white;
+}
+
+form button:hover {
+    background-color: #333333;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Case Study Cards */
+.case-study-card {
+    background-color: #ffffff;
+}
+
+.case-study-card:hover {
+    background-color: #f0f0f0; /* light gray hover */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.cs-tags {
+    background-color: #cccccc;
+    color: #000000;
+}
+
+.cs-btn {
+    background-color: #000000;
+    color: white;
+}
+
+.cs-btn:hover {
+    background-color: #333333;
+}
+
+.cs-full-image {
+    display: block;
+    margin: 40px auto; /* adds space above + centers */
+    width:900px;
+    border-radius: 20px;
 }
 

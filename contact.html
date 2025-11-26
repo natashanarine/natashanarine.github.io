@@ -18,23 +18,77 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="design.html">Design</a></li>
         <li><a href="personal_work.html">Personal Work</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
 <section class="cute-section">
-      <!-- Back button -->
-      <a href="explore.html" class="back-btn">← Back</a>
 
-    <h2>Contact Me</h2>
+    
 
-    <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button>Send Message</button>
+    <a href="explore.html" class="back-btn">← Back to explore</a>
+
+    <h2>Connect with me on socials! Just click the logo to go to my page.</h2>
+
+      <!-- Social Buttons -->
+      <div class="contact-icons">
+        <a href="https://www.linkedin.com/in/natasha-narine/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://github.com/natashanarine" target="_blank">
+            <img src="images/github.png" alt="GitHub">
+        </a>
+
+        <a href="https://www.instagram.com/tashasoutlet/" target="_blank">
+            <img src="images/instagram.jpg" alt="Instagram">
+        </a>
+    </div>
+
+    <h2>
+        You can email me at 
+        <a href="mailto:nb.narine@gmail.com">nb.narine@gmail.com</a> 
+        or send one right here!
+    </h2>
+
+    <form action="https://formspree.io/f/movzzzpl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Email</button>
     </form>
-</section>
+  
+    <h2>Thank you for taking the time to look through my portfolio. I look forward to getting connected!</h2>
 
+</section>
+  
+<!-- Scripts -->
+    <!-- Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <!-- Confetti JS -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+const exploreButton = document.getElementById('explore-btn');
+
+exploreButton.addEventListener('click', function(e) {
+    e.preventDefault(); // prevent immediate navigation
+
+    // Trigger confetti
+    confetti({
+        particleCount: 150,
+        spread: 150,
+        origin: { y: 0.6 },
+        colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'], // rainbow
+    });
+
+    // Navigate after short delay to let confetti show
+    setTimeout(() => {
+        window.location.href = exploreButton.href;
+    }, 600); // 500ms delay
+});
+
+</script>
 </body>
 </html>
+
