@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body class="personal-work-page">
 
     <nav>
         <div class="logo">Natasha Narine</div>
@@ -17,7 +18,7 @@
             <li><a href="case_studies.html">Case Studies</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="design.html">Design</a></li>
-            <li><a href="personal_work.html">Personal Work</a></li>
+            <li><a href="personal_work.html" class="highlight">Personal Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -26,9 +27,192 @@
       <!-- Back button -->
       <a href="explore.html" class="back-btn">← Back to explore</a>
 
-    <h2>Personal Work</h2>
-    <p class="section-subtitle">Your personal creations, artwork, experimental UI, photography, etc can go here.</p>
+      <h2>Personal Work</h2>
+      <p class="section-subtitle">
+       Welcome to my archive! I like to create with a variety of mediums, and I'm always open to try out new things.
+        
+        I have an instagram page
+        <a href="https://www.instagram.com/tashasoutlet/">@tashasoutlet</a> 
+        where I post my creations, but here are some of my favorites! 
+        
+        
+    </p>
+      
+
+    <h3>Graphic Design</h3>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/selfportrait.jpg', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/selfportrait.jpg" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Self Portrait -  Character Design</h4>
+                <p>In the process of discovering a new art style, I was able to create this self portrait! 
+                    I plan on keeping this design a part of my personal brand.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/selfportrait2.jpg', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/selfportrait2.jpg" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Self Portrait -  Mixed Media</h4>
+                <p>In the process of discovering a new art style, I was able to create this self portrait! 
+                    I plan on keeping this design a part of my personal brand.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Art Work</h3>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/flower.png', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/flower.png" alt="Local Lens App">
+            <div class="card-content">
+                <h4>"Pot of Love" - Painting</h4>
+                <p>Set of 7 paintings designed to be displayed in a dining room.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/gg3.jpg', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/gg3.jpg" alt="Local Lens App">
+            <div class="card-content">
+                <h4>"Golden Girls" - Comissoned Painting Set</h4>
+                <p>Set of 7 paintings designed to be displayed in a dining room.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <h3>Nails</h3>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/nyancat.png', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/nyancat.png" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Nyan Cat - Custom Press-on Set</h4>
+                <p>A two-mode travel app designed to support local businesses and increase safety awareness.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/junknails.jpg', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/junknails.jpg" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Junk Nails - Custom Press-on Set</h4>
+                <p>A two-mode travel app designed to support local businesses and increase safety awareness.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Photography</h3>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/locallens (1).png', 
+            '.',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/locallens (1).png" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Local Lens - Gamified Local Exploration App</h4>
+                <p>A two-mode travel app designed to support local businesses and increase safety awareness.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Miscellaneous</h3>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openPreview(
+            'images/locallens (1).png', 
+            'Local Lens - Gamified Local Exploration App',
+            'A two-mode travel app designed to support local businesses and increase safety awareness for travelers and locals.'
+        )">
+            <img src="images/locallens (1).png" alt="Local Lens App">
+            <div class="card-content">
+                <h4>Local Lens - Gamified Local Exploration App</h4>
+                <p>A two-mode travel app designed to support local businesses and increase safety awareness.</p>
+                <div class="card-overlay">
+                    <span>Get a Closer Look</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Image Preview Modal -->
+<div id="imgPreviewModal" class="img-preview-modal" onclick="closePreview()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="imgPreview" src="">
+        <h2 id="imgTitle"></h2>
+        <p id="imgDesc"></p>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+    function openPreview(src, title, description) {
+        document.getElementById("imgPreview").src = src;
+        document.getElementById("imgDesc").innerText = description;
+        document.getElementById("imgPreviewModal").style.display = "flex";
+    }
+
+    function closePreview() {
+        document.getElementById("imgPreviewModal").style.display = "none";
+    }
+</script>
+
 </section>
+
 
 </body>
 </html>

@@ -42,10 +42,20 @@ nav ul li a:hover {
     color: #ff69b4;
 }
 
+.highlight {
+    color: #FF4081; /* pick your color */
+}
+
+.highlight:hover {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(to right, #ffe6f0, #ffd6e8);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -53,7 +63,21 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    animation: glow 3s ease-in-out infinite alternate;
+ 
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* full width */
+    height: 100%;  /* full height */
+    object-fit: cover; /* makes it act like a background */
+    z-index: -1;   /* put behind text */
+}
+
+.personal-work-page {
+    background-color: #FF80AB; /* pick your color */
 }
 
 .hero-title {
@@ -92,7 +116,8 @@ nav ul li a:hover {
     100% { background-position: 0% 50%; }
 }
 
-/* Confetti canvas fills screen and sits on top */
+/* Confetti*/
+
 #confetti-canvas {
     position: fixed;
     top: 0;
@@ -106,7 +131,7 @@ nav ul li a:hover {
 
 /* Cute Sections */
 .cute-section {
-    padding: 100px 50px;
+    padding: 50px 50px;
     background-color: #fff0f5;
     border-radius: 20px;
     margin: 50px auto;
@@ -163,8 +188,8 @@ h4 {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* Image inside card */
@@ -283,14 +308,9 @@ footer {
     background-color: #ffd6e8;
     color: #333;
     border-radius: 15px 15px 0 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Hero glow animation */
-@keyframes glow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
 /* Explore Page */
 .explore-section {
@@ -444,7 +464,7 @@ footer {
     gap: 15px;
     margin: 20px auto 0 auto; /* top margin + center horizontally */
     max-width: 1000px; /* control overall width */
-    width: 90%; /* take most of the container but leave space on sides */
+    width: 93%; /* take most of the container but leave space on sides */
 }
 
 
@@ -459,10 +479,13 @@ footer {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 250px; /* choose the height you want */
+    object-fit: cover; /* keeps image from stretching */
+    border-radius: 10px; /* optional: makes it look clean */
     display: block;
     transition: transform 0.5s ease;
 }
+
 
 /* Hover zoom effect */
 .gallery-item:hover img {
@@ -680,6 +703,49 @@ footer {
     transform: scale(1.1);
 }
 
+/* Image pop up on projects page */
+/* Modal background overlay */
+.img-preview-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* White box container */
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 850px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.modal-content img {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 12px;
+    margin-top: 50px ;
+    margin-bottom: 5px;
+}
+
+/* Description text */
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin: auto;
+    max-width: 750px;
+}
+
 
 
 
@@ -713,13 +779,12 @@ nav {
 }
 
 nav ul li a:hover {
-    color: #555555; /* dark gray for hover */
+    color: #FF4081; /* dark gray for hover */
 }
 
 /* Hero Section */
 .hero {
     
-    background: linear-gradient(to right, #ffffff, #e0e0e0); /* white to light gray */
     color: #000000;
 }
 
