@@ -115,6 +115,7 @@ nav ul li a:hover {
     z-index: -1;   /* put behind text */
 }
 
+
 .personal-work-page {
     height: 100vh; /* full page height */
     background: linear-gradient(270deg, 
@@ -670,16 +671,33 @@ footer {
 .about-content {
     display: flex;
     align-items: center;
-    gap: 30px; /* space between headshot and text */
+    gap: 30px; 
     margin-top: 20px;
-    flex-wrap: wrap; /* stack on smaller screens */
+    flex-wrap: wrap; 
 }
 
-.headshot img {
-    width: 260px;          /* adjust to whatever rectangle size you want */
-    height: 245px;          /* keeps proportions natural */
-    border-radius: 20px;      /* makes sure it stays a rectangle */
-    object-fit: cover;     /* avoids distortion if inside a fixed container */
+.headshot-wrapper {
+    position: relative; 
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden; 
+}
+
+.headshot-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+}
+.open-to-work-img {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: auto; 
+    z-index: 10; 
+
 }
 
 .about-text {
@@ -1047,3 +1065,92 @@ footer {
         margin: 20px auto;
     }
 }
+
+.explore-card {
+    display: inline-block;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    background: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect to replace text */
+.explore-card::after {
+    content: attr(data-description);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 90%;        /* optional, wraps long descriptions */
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* Hide original text on hover */
+.explore-card:hover {
+    color: transparent;
+}
+
+/* Show description on hover */
+.explore-card:hover::after {
+    opacity: 1;
+    color: black;       /* description color */
+}
+
+
+
+
+.process-steps {
+    position: relative;
+    padding-left: 60px; /* more space for timeline */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px; /* move line farther left */
+    width: 3px;
+    height: 100%;
+    background: #000; /* line is black */
+    border-radius: 2px;
+}
+
+.process-step {
+    position: relative;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    left: -70px; /* move circles farther left */
+    top: 20px; /* adjust vertically */
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 3px solid #000; /* black circle border */
+    border-radius: 50%;
+}
+
+.process-step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #000; /* black headings */
+}
+
+.process-step p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
