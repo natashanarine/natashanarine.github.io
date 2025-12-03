@@ -6,6 +6,8 @@
     <title>Explore | Natasha</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+     <!-- Favicon -->
+<link rel="icon" type="image/jpg" sizes="32x32" href="images/selfportrait.jpg">
 </head>
 <body>
 
@@ -21,25 +23,15 @@
 
     <div class="explore-grid">
 
-        
-        <a href="case_studies.html" class="explore-card pop">Case Studies</a>
-        <a href="projects.html" class="explore-card pop">Projects</a>
-        <a href="design.html" class="explore-card pop">Design</a>
-        <a href="personal_work.html" class="explore-card pop">Personal Work</a>
-       
-
+        <a href="case_studies.html" class="explore-card" data-description="In-depth research projects I've completed">Case Studies</a>
+        <a href="projects.html" class="explore-card" data-description="Hands-on projects showcasing my work">Projects</a>
+        <a href="design.html" class="explore-card" data-description="A variety of design work highlighting my creative skills">Design</a>
+        <a href="personal_work.html" class="explore-card" data-description="My personal collection of creative work and experiments">Personal Work</a>
+    
     </div>
+    
+    
 </section>
-
-<script>
-    // cute pop-in stagger animation
-    const cards = document.querySelectorAll('.explore-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.classList.add('visible');
-        }, 150 * index); // stagger timing
-    });
-</script>
 
 </body>
 </html>
