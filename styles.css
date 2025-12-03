@@ -163,63 +163,24 @@ nav ul li a:hover {
     animation: gradientBG 3s ease infinite;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Mobile responsiveness for Hero Section */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    .hero {
-        padding: 0 15px;
-        justify-content: flex-start; /* better for small screens */
-        height: auto; /* let content dictate height on small devices */
-        padding-top: 80px; /* account for fixed navbar */
-    }
-
-    .hero-title {
-        font-size: 2rem; /* smaller title */
-        margin-bottom: 8px;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem; /* smaller subtitle */
-        margin-bottom: 20px;
-    }
-
     .btn {
-        margin-left: 0;
-        margin-bottom: 15px;
-        padding: 12px 25px; /* smaller buttons */
-        font-size: 0.9rem;
-    }
-
-    .hero-text {
-        width: 100%;
-    }
-
-    .hero-bg {
-        object-fit: cover;
+        margin-left: 0;        /* remove horizontal margin for stacked buttons */
+        margin-bottom: 15px;   /* add spacing if stacked vertically */
+        padding: 12px 25px;    /* smaller padding for smaller screens */
+        font-size: 0.9rem;     /* slightly smaller text */
+        width: 80%;            /* optional: make button take most of screen width */
     }
 }
 
-/* Optional: very small devices */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
     .btn {
-        padding: 10px 20px;
-        font-size: 0.8rem;
+        padding: 10px 20px;    /* even smaller padding for very small screens */
+        font-size: 0.8rem;     
+        width: 90%;            /* fill more of the screen on very small devices */
     }
 }
-
 
 /* Confetti*/
 
@@ -305,7 +266,7 @@ h5 {
     transition: transform 0.3s ease;
 }
 
-/* Image inside card */
+/* Desktop styles */
 .project-card img {
     width: 150px;
     height: 150px;
@@ -313,11 +274,38 @@ h5 {
     margin-right: 20px;
     flex-shrink: 0;
     transition: transform 0.3s ease;
+    object-fit: cover; /* ensures image fills container without stretching */
 }
 
 .project-card img:hover {
     transform: scale(1.03);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column; /* stack image and content vertically */
+        align-items: center;
+    }
+
+    .project-card img {
+        width: 80%;         /* responsive width */
+        max-width: 120px;   /* cap size on tablets */
+        height: auto;       /* maintain aspect ratio */
+        margin-right: 0;
+        margin-bottom: 15px; /* spacing when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card img {
+        width: 70%;        /* smaller width for phones */
+        max-width: 100px;
+    }
+}
+
+
+
 
 /* Card text content */
 .card-content {
@@ -460,6 +448,7 @@ footer {
 
 
 
+/* Desktop / default */
 .back-btn {
     display: inline-block;
     margin: 20px 0;
@@ -475,6 +464,26 @@ footer {
 .back-btn:hover {
     background-color: #ff85c1;
     transform: scale(1.05);
+}
+
+/* Tablet / small screens */
+@media (max-width: 768px) {
+    .back-btn {
+        padding: 8px 18px;       /* slightly smaller padding */
+        font-size: 0.9rem;       /* smaller text */
+        margin: 15px 0;
+    }
+}
+
+/* Mobile / very small screens */
+@media (max-width: 480px) {
+    .back-btn {
+        width: 90%;              /* almost full width */
+        padding: 7px 15px;
+        font-size: 0.85rem;
+        text-align: center;      /* center text when button stretches */
+        margin: 10px auto;       /* center button with vertical spacing */
+    }
 }
 
 
@@ -512,12 +521,31 @@ footer {
     box-shadow: 0 12px 25px rgba(0,0,0,0.08);
 }
 
-/* Thumbnail images */
+/* Desktop / default */
 .cs-image {
     width: 100%;
     border-radius: 15px;
     margin-bottom: 15px;
+    object-fit: cover; /* ensures image fills container without distortion */
+    height: auto;      /* maintain aspect ratio */
 }
+
+/* Tablet / small screens */
+@media (max-width: 768px) {
+    .cs-image {
+        max-width: 90%;    /* prevents image from being too wide */
+        margin-left: auto;
+        margin-right: auto; /* centers image */
+    }
+}
+
+/* Mobile / very small screens */
+@media (max-width: 480px) {
+    .cs-image {
+        max-width: 100%;  /* full width of container */
+    }
+}
+
 
 /* Title */
 .case-study-card h3 {
@@ -993,10 +1021,29 @@ footer {
     background-color: #333333;
 }
 
+/* Desktop / default */
 .cs-full-image {
     display: block;
-    margin: 40px auto; /* adds space above + centers */
-    width:900px;
+    margin: 40px auto; 
+    width: 900px;      
+    max-width: 100%;   
     border-radius: 20px;
+    height: auto;      
+    object-fit: cover;  
 }
 
+/* Tablet / small screens */
+@media (max-width: 768px) {
+    .cs-full-image {
+        width: 80%;     
+        margin: 30px auto;
+    }
+}
+
+/* Mobile / very small screens */
+@media (max-width: 480px) {
+    .cs-full-image {
+        width: 95%;     
+        margin: 20px auto;
+    }
+}
