@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natasha | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natasha | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Global Header -->
     <nav>
         <div class="logo">Natasha Narine</div>
         <ul>
@@ -30,7 +29,8 @@
         <div class="hero-text">
             <h1 class="hero-title">Hi, I'm Natasha!</h1>
             <p class="hero-subtitle">I design fun and useful experiences for web, mobile, and beyond.</p>
-            <a href="explore.html" class="btn" id="explore-btn">Explore My Work</a>
+            <a href="about.html" class="btn explore-btn">Learn About Me</a>
+            <a href="explore2.html" class="btn explore-btn">Explore My Work</a>
         </div>
     </section>
 
@@ -43,28 +43,31 @@
     <!-- Confetti library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
-    <!-- Confetti JS -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script>
-const exploreButton = document.getElementById('explore-btn');
+    <script>
+    const exploreButtons = document.querySelectorAll('.explore-btn');
 
-exploreButton.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent immediate navigation
+    exploreButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // prevent immediate navigation
 
-    // Trigger confetti
-    confetti({
-        particleCount: 150,
-        spread: 150,
-        origin: { y: 0.6 },
-        colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'], // rainbow
+              // Trigger confetti at actual click position on the page
+        const x = e.clientX / window.innerWidth;   
+        const y = e.clientY / window.innerHeight;  
+
+            confetti({
+                particleCount: 150,
+                spread: 200,
+                origin: { x: x, y: y }, // confetti starts at click location
+                colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'],
+            });
+
+            // Navigate after short delay
+            setTimeout(() => {
+                window.location.href = button.href;
+            }, 600);
+        });
     });
-
-    // Navigate after short delay to let confetti show
-    setTimeout(() => {
-        window.location.href = exploreButton.href;
-    }, 600); // 500ms delay
-});
-</script>
+    </script>
 
 </body>
 </html>
