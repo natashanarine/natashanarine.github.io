@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Work | Natasha</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
      <!-- Favicon -->
 <link rel="icon" type="image/jpg" sizes="32x32" href="images/selfportrait.jpg">
 </head>
@@ -13,25 +12,25 @@
 <body class="personal-work-page">
 
     <nav>
-        <div class="logo">Natasha Narine</div>
+        <div class="logo">natasha narine</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="case_studies.html">Case Studies</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="design.html">Design</a></li>
-            <li><a href="personal_work.html" class="highlight">Personal Work</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="case_studies.html">case studies</a></li>
+            <li><a href="projects.html">projects</a></li>
+            <li><a href="design.html">design</a></li>
+            <li><a href="personal_work.html" class="highlight">personal work</a></li>
+            <li><a href="contact.html">contact</a></li>
         </ul>
     </nav>
 
 <section class="cute-section">
       <!-- Back button -->
-      <a href="explore2.html" class="back-btn">← Explore My Work</a>
+      <a href="explore2.html" class="back-btn">← explore my work</a>
 
-      <h2>Personal Work</h2>
+      <h2>PERSONAL WORK</h2>
       <p class="section-subtitle">
-       Welcome to my archive! I like to create with a variety of mediums, and I'm always open to try out new things.
+       welcome to my archive! I like to create with a variety of mediums, and I'm always open to try out new things.
         
         I have an instagram page
         <a href="https://www.instagram.com/tashasoutlet/">@tashasoutlet</a> 
@@ -53,7 +52,7 @@
             <div class="card-content">
                 <h4>Self Portrait -  Character Design</h4>
                 <p>In the process of discovering a new art style, I created this self portrait. 
-                    I plan on keeping this design as a part of my personal brand, and you can see it featured on my home page!</p>
+                    I plan on keeping this design as a part of my personal brand, and you can see it featured on many of my projects!</p>
                 <div class="card-overlay">
                     <span>Get a Closer Look</span>
                 </div>
@@ -169,32 +168,29 @@
     </div>
 
 
-   
-
-
 <!-- Image Preview Modal -->
-<div id="imgPreviewModal" class="img-preview-modal" onclick="closePreview()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <img id="imgPreview" src="">
-        <h2 id="imgTitle"></h2>
-        <p id="imgDesc"></p>
+    <div id="imgPreviewModal" class="img-preview-modal" onclick="closePreview()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="imgPreview" src="">
+            <h2 id="imgTitle"></h2>
+            <p id="imgDesc"></p>
+        </div>
     </div>
-</div>
 
-<!-- JS -->
-<script>
-    function openPreview(src, title, description) {
-        document.getElementById("imgPreview").src = src;
-        document.getElementById("imgDesc").innerText = description;
-        document.getElementById("imgPreviewModal").style.display = "flex";
-    }
+    <!-- JS -->
+    <script>
+        function openPreview(src, title, description) {
+            document.getElementById("imgPreview").src = src;
+            document.getElementById("imgDesc").innerText = description;
+            document.getElementById("imgPreviewModal").style.display = "flex";
+        }
 
-    function closePreview() {
-        document.getElementById("imgPreviewModal").style.display = "none";
-    }
-</script>
-
+        function closePreview() {
+            document.getElementById("imgPreviewModal").style.display = "none";
+        }
+    </script>
 </section>
+
 
 
 </body>

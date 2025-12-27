@@ -5,91 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Natasha</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-     <!-- Favicon -->
-<link rel="icon" type="image/jpg" sizes="32x32" href="images/selfportrait.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" sizes="32x32" href="images/selfportrait.jpg">
 </head>
 <body>
 
-<nav>
-    <div class="logo">Natasha Narine</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="case_studies.html">Case Studies</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="design.html">Design</a></li>
-        <li><a href="personal_work.html" class="highlight">Personal Work</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <div class="logo">natasha narine</div>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="case_studies.html">case studies</a></li>
+            <li><a href="projects.html">projects</a></li>
+            <li><a href="design.html">design</a></li>
+            <li><a href="personal_work.html" class="highlight">personal work</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
 
-<section class="cute-section">
+    <!-- New container for contact content -->
+    <div class="contact-container">
 
-    
+        <h2>
+            CONNECT ✲ WITH ME ON SOCIALS! JUST CLICK THE LOGO TO GO TO MY PAGE ⌯⌲
+        </h2>
 
-    <a href="index.html" class="back-btn">← Back to Home</a>
+        <!-- Social Buttons -->
+        <div class="contact-icons">
+            <a href="https://www.linkedin.com/in/natasha-narine/" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/natashanarine" target="_blank">
+                <img src="images/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.instagram.com/tashasoutlet/" target="_blank">
+                <img src="images/instagram.jpg" alt="Instagram">
+            </a>
+        </div>
 
-    <h2>Connect with me on socials! Just click the logo to go to my page.</h2>
+        <h2>
+            EMAIL ME AT  <a href="mailto:nb.narine@gmail.com">nb.narine@gmail.com</a>,
+            OR SEND ONE RIGHT HERE ✎ᝰ
+        </h2>
 
-      <!-- Social Buttons -->
-      <div class="contact-icons">
-        <a href="https://www.linkedin.com/in/natasha-narine/" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn">
-        </a>
+        <form action="https://formspree.io/f/movzzzpl" method="POST">
+            <input type="text" name="name" placeholder="your name" required>
+            <input type="email" name="email" placeholder="your email" required>
+            <textarea name="message" placeholder="your message" required></textarea>
+            <button type="submit">send email</button>
+        </form>
 
-        <a href="https://github.com/natashanarine" target="_blank">
-            <img src="images/github.png" alt="GitHub">
-        </a>
-
-        <a href="https://www.instagram.com/tashasoutlet/" target="_blank">
-            <img src="images/instagram.jpg" alt="Instagram">
-        </a>
+        <h2>
+            THANK YOU FOR TAKING THE TIME TO LOOK THROUGH MY PORTFOLIO ♡ I LOOK FORWARD TO CONNECTING!
+        </h2>
     </div>
 
-    <h2>
-        You can email me at 
-        <a href="mailto:nb.narine@gmail.com">nb.narine@gmail.com</a> 
-        or send one right here!
-    </h2>
-
-    <form action="https://formspree.io/f/movzzzpl" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Email</button>
-    </form>
-  
-    <h2>Thank you for taking the time to look through my portfolio. I look forward to getting connected!</h2>
-
-</section>
-  
 <!-- Scripts -->
-    <!-- Confetti library -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-    <!-- Confetti JS -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script>
 const exploreButton = document.getElementById('explore-btn');
 
 exploreButton.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent immediate navigation
+    e.preventDefault();
 
-    // Trigger confetti
     confetti({
         particleCount: 150,
         spread: 150,
         origin: { y: 0.6 },
-        colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'], // rainbow
+        colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'],
     });
 
-    // Navigate after short delay to let confetti show
     setTimeout(() => {
         window.location.href = exploreButton.href;
-    }, 600); // 500ms delay
+    }, 600);
 });
-
 </script>
 </body>
 </html>
