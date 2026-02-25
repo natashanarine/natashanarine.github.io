@@ -12,7 +12,7 @@
 <body>
 
     <nav>
-        <div class="logo">natasha narine</div>
+        <a href="index.html" class="logo" style="font-size: 1.2rem;">natasha narine</a>
         <ul>
             <li><a href="about.html">about</a></li>
             <li><a href="case_studies.html">case studies</a></li>
@@ -39,10 +39,82 @@
     </picture>
 
     <div class="hero-text">
-        <a href="about.html" class="btn explore-btn">learn about me</a>
-        <a href="explore2.html" class="btn explore-btn">explore my work</a>
+        <div style="margin-top: 20px;">
+            <a href="about.html" class="btn explore-btn">learn about me</a>
+          
+        </div>
     </div>
 </section>
+<!-- Cards Section -->
+<section class="cards-section">
+    <div class="card" onclick="window.location.href='casestudy2.html'">
+        <img src="images/techrise display.png" alt="Card 1 Image" class="card-image">
+        <div class="card-content">
+            <h3>TechRise Application</h3>
+            <p>Redesigned a student-focused app to improve usability, simplify navigation, and enhance overall engagement with academic task management.</p>
+        </div>
+    </div>
+    <div class="card" data-url="https://ideathon-opal.vercel.app/">
+        <img src="images/glasses.webp" alt="Card 2 Image" class="card-image">
+        <div class="card-content">
+            <h3>Pace - Adaptive Reading Assistant</h3>
+            <p>AI-powered smart glasses that highlight words in real-time, adapt to your reading speed, and help everyone read better. Development in progress.</p>
+        </div>
+    </div>
+    <div class="card" onclick="window.location.href='illustration1.html'">
+        <img src="images/black hoodie mockup.png" alt="We Create Tech Merch Design" class="card-image" style="padding: 10px;">
+        <div class="card-content">
+            <h3>We Create Tech Merch Design</h3>
+            <p>Designed for the non-profit We Create Tech, this merch promotes diversity in tech and was featured in the Atlanta Journal-Constitution.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.card {
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+}
+</style>
+
 
 
     <!-- Footer -->
@@ -76,6 +148,13 @@
             setTimeout(() => {
                 window.location.href = button.href;
             }, 600);
+        });
+    });
+    // Add event listeners for cards with data-url attribute
+    const cards = document.querySelectorAll('.card[data-url]');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            window.location.href = card.getAttribute('data-url');
         });
     });
     </script>

@@ -23,63 +23,31 @@
         </ul>
     </nav>
 
-    <!-- New container for contact content -->
+    <!-- Contact Section -->
     <div class="contact-container">
 
-        <h2>
-            CONNECT ✲ WITH ME ON SOCIALS! JUST CLICK THE LOGO TO GO TO MY PAGE ⌯⌲
-        </h2>
+        <h2>Connect with me</h2>
 
-        <!-- Social Buttons -->
+        <!-- Social Links -->
         <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/natasha-narine/" target="_blank">
+            <a href="https://www.linkedin.com/in/natasha-narine/" target="_blank" aria-label="LinkedIn">
                 <img src="images/linkedin.png" alt="LinkedIn">
             </a>
-            <a href="https://github.com/natashanarine" target="_blank">
+            <a href="https://github.com/natashanarine" target="_blank" aria-label="GitHub">
                 <img src="images/github.png" alt="GitHub">
             </a>
-            <a href="https://www.instagram.com/tashasoutlet/" target="_blank">
+            <a href="https://www.instagram.com/tashasoutlet/" target="_blank" aria-label="Instagram">
                 <img src="images/instagram.jpg" alt="Instagram">
             </a>
         </div>
 
-        <h2>
-            EMAIL ME AT  <a href="mailto:nb.narine@gmail.com">nb.narine@gmail.com</a>,
-            OR SEND ONE RIGHT HERE ✎ᝰ
-        </h2>
-
-        <form action="https://formspree.io/f/movzzzpl" method="POST">
-            <input type="text" name="name" placeholder="your name" required>
-            <input type="email" name="email" placeholder="your email" required>
-            <textarea name="message" placeholder="your message" required></textarea>
-            <button type="submit">send email</button>
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/movzzzpl" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
         </form>
 
-        <h2>
-            THANK YOU FOR TAKING THE TIME TO LOOK THROUGH MY PORTFOLIO ♡ I LOOK FORWARD TO CONNECTING!
-        </h2>
     </div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script>
-const exploreButton = document.getElementById('explore-btn');
-
-exploreButton.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    confetti({
-        particleCount: 150,
-        spread: 150,
-        origin: { y: 0.6 },
-        colors: ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'],
-    });
-
-    setTimeout(() => {
-        window.location.href = exploreButton.href;
-    }, 600);
-});
-</script>
-</body>
-</html>
 
